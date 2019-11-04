@@ -1,5 +1,4 @@
 <% @boards.each do |board| %>
-  <div class="container">
     <div class="card">
       <div class="card-image waves-effect waves-block waves-light">
         <% image_num = board.id %>
@@ -16,6 +15,5 @@
         <span class="card-title grey-text text-darken-4"><%= board.title  %><i class="material-icons right">close</i></span>
         <p><%= board.body %></p>
       </div>
-    </div>
   </div>
 <% end %>
