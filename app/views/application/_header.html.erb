@@ -1,5 +1,7 @@
 <nav>
+<div class="container">
   <div class="nav-wrapper">
+  <div class="container">
     <a href="" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
     <ul class="right hide-on-med-and-down">
       <li><a href="" class="waves-effect waves-light btn">Sass</a></li>
@@ -8,8 +10,10 @@
       <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
      <!-- SideNav -->
-    <a href="" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <a href="" class="sidenav-trigger" data-target="slide-out"><i class="material-icons">menu</i></a>
   </div>
+  </div>
+</div>
 </nav>
 
 <!-- Dropdown Structure -->
@@ -21,10 +25,10 @@
 </ul>
 
 <!-- SideNavの要素(Structure) -->
-<!-- Triggerの中身を指定したいときは、class="**-content" -->
-<ul id="slide-out" class="sidenav sidenav-content">
+<ul id="slide-out" class="sidenav">
     <li><a href="#!">Sass<i class="material-icons left">person</i></a></li>
     <li><a href="#!">Components<i class="material-icons left">local_post_office</i></a></li>
+    <%# 
     <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
             <li>  
@@ -39,6 +43,20 @@
                 </div>
             </li>
             </ul>
-        </li>
+      </li> 
+      %>
 </ul>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+      $(".dropdown-trigger").dropdown();
+      $(".sidenav").sidenav();
+      /* sidenav上でDropdownメニューを動かしたいが...
+      $('.sidenav').sidenav('show');
+      */
+    });
+</script>
+
 
