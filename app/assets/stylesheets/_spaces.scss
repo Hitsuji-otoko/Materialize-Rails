@@ -1,0 +1,41 @@
+@each $prop, $prop_sub in (margin: m, padding: p) {
+    @for $size from 0 through 5 {
+      $rem: $size * 0.5;
+      @each $direct, $direct_sub in (top: t, bottom: b, left: l, right: r) {
+        .#{$prop_sub}#{$direct_sub}-#{$size} {
+          #{$prop}-#{$direct}: #{$rem}rem!important;
+        }
+      }
+      .#{$prop_sub}x-#{$size} {
+        #{$prop}-right: #{$rem}rem!important;
+        #{$prop}-left: #{$rem}rem!important;
+      }
+      .#{$prop_sub}y-#{$size} {
+        #{$prop}-top: #{$rem}rem!important;
+        #{$prop}-bottom: #{$rem}rem!important;
+      }
+      .#{$prop_sub}-#{$size} {
+        #{$prop}: #{$rem}rem!important;
+      }
+    }
+  
+    @each $direct, $direct_sub in (top: t, bottom: b, left: l, right: r) {
+      .#{$prop_sub}#{$direct_sub}-auto {
+        #{$prop}-#{$direct}: auto!important;
+      }
+      .#{$prop_sub}x-auto {
+        #{$prop}-left: auto!important;
+        #{$prop}-right: auto!important;
+      }
+      .#{$prop_sub}y-auto {
+        #{$prop}-top: auto;
+        #{$prop}-bottom: auto;
+      }
+      .#{$prop_sub}-auto {
+        #{$prop}-top: auto!important;
+        #{$prop}-bottom: auto!important;
+        #{$prop}-left: auto!important;
+        #{$prop}-right: auto!important;
+      }
+    }
+  }
