@@ -13,16 +13,16 @@
   <body>
     <%= render 'header' %>
     <div class="session-control-box">
-    <% if signed_in? %>
-      ユーザ名: <%= current_user.username %><br>
-      <%= link_to 'ログアウトする', destroy_user_session_path, method: :delete %>
-    <% end %>
     <div class="notice">
       <%= notice %>
     </div>
     <div class="alert">
       <%= alert %>
     </div>
+    <% if signed_in? %>
+      ユーザ名: <%= current_user.username %><br>
+      <%= link_to 'ログアウトする', destroy_user_session_path, method: :delete %>
+    <% end %>
     <div class="container">
       <%= yield %>
     </div>
