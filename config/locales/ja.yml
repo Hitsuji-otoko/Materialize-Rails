@@ -2,4 +2,4 @@ ja:
   activerecord:
     attributes:
       user:
-        name: ユーザ名
+        username: ユーザ名
