@@ -66,3 +66,4 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
 
 gem 'devise'
+gem 'devise-i18n'
