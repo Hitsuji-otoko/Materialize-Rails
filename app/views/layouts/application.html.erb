@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MaterializeSample</title>
+    <title>Materialize掲示板</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,16 +13,18 @@
   <body>
     <%= render 'header' %>
     <div class="session-control-box">
-    <div class="notice">
-      <%= notice %>
-    </div>
-    <div class="alert">
-      <%= alert %>
-    </div>
-    <% if signed_in? %>
-      ユーザ名: <%= current_user.username %><br>
-      <%= link_to 'ログアウトする', destroy_user_session_path, method: :delete %>
-    <% end %>
+      <div class="container">
+          <% if notice %>
+            <div class="card-panel teal lighten-4"><div class="notice">        
+              <%= notice %>
+            </div></div>
+          <% end %>
+          <% if alert %>
+            <div class="card-panel red lighten-4"><div class="alert">
+              <span class="pink-text text-darken4"><%= alert %></span>
+            </div></div>
+          <% end %>
+        </div>
     <div class="container">
       <%= yield %>
     </div>

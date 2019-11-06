@@ -5,21 +5,24 @@
 
 <body>
   <nav>
-  <div class="container">
     <div class="nav-wrapper">
     <div class="container">
       <a href="/" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/users/login" class="waves-effect waves-light btn">ログイン</a></li>
-        <li><a href="/users/sign_up" class="waves-effect waves-light btn">ユーザ登録</a></li>
+        <% if signed_in? %>
+          <li>ユーザ名: <%= current_user.username %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete , class: '<a class="waves-effect waves-teal btn-flat">' %></li>
+        <% else %>
+          <li><a href="/users/login" class="waves-effect waves-light btn">ログイン</a></li>
+        <% end %>
+          <li><a href="/users/sign_up" class="waves-effect waves-light btn">ユーザ登録</a></li>
         <!-- Dropdown Trigger -->
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">ユーザ情報<i class="material-icons right">arrow_drop_down</i></a></li>        
       </ul>
       <!-- SideNav -->
       <a href="" class="sidenav-trigger" data-target="slide-out"><i class="material-icons">menu</i></a>
     </div>
     </div>
-  </div>
   </nav>
 
   <!-- Dropdown Structure -->
