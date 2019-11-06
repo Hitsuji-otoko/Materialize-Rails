@@ -16,7 +16,11 @@
           <li><a href="/users/login" class="waves-effect waves-light btn">ログイン</a></li>
         <% end %>
           <li><a href="/users/sign_up" class="waves-effect waves-light btn">ユーザ登録</a></li>
+        <% if signed_in? %>  
           <li><a href="" class="waves-effect waves-light btn">新規投稿</a></li>
+        <% else %>
+          <li><a href="/common_boards/new" class="waves-effect waves-light btn">新規投稿</a></li>
+        <% end %>
         <!-- Dropdown Trigger -->
         <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">掲示板メニュー<i class="material-icons right">arrow_drop_down</i></a></li> -->       
       </ul>

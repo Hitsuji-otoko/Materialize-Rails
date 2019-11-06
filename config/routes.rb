@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   sign_in: "login",
   sign_out: "logout"
 } 
-  root to: 'boards#index'
-  get 'boards/index'
+  root to: 'common_boards#index'
+  resources :common_boards
+  resources :boards
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
