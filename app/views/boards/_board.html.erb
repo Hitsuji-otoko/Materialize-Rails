@@ -1,10 +1,4 @@
-<div class="row">
-  <div class="row-header">
-    <h4>ユーザ掲示板</h4>
-  </div>
-</div>
-<% @boards.each do |board| %>
-    <div class="card medium">
+<div class="card large">
       <div class="card-image waves-effect waves-block waves-light">
         <% image_num = board.id %>
         <% if board.id > 15 %>
@@ -22,6 +16,4 @@
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4"><%= board.title  %><i class="material-icons right">close</i></span>
         <p><%= board.body %></p>
-      </div>
-  </div>
-<% end %>
+</div>

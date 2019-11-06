@@ -14,7 +14,7 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = current_user.board.build(board_params)
+    @board = current_user.boards.build(board_params)
 
     respond_to do |format|
       if @board.save
