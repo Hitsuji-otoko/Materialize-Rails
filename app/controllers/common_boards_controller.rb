@@ -35,8 +35,8 @@ class CommonBoardsController < ApplicationController
     end
 
     def update
-        @common_board.update(common_board_params)
-        if @commmon_board.save
+       @common_board.update(common_board_params)
+        if @common_board.save
             flash[:notice] = "「#{@common_board.title}」の記事を編集しました"
             redirect_to common_board_path
         else

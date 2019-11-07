@@ -3,6 +3,15 @@
     <h4>ユーザ掲示板</h4>
   </div>
 </div>
+
+<!-- 検索フォーム -->
+<form action="/" name="search2" method="post">
+	<dl class="search2">
+		<dt><input type="text" name="search" value="" placeholder="Search" /></dt>
+		<dd><button>Search</button></dd>
+	</dl>
+</form>
+
 <% @boards.each do |board| %>
     <div class="card medium">
       <div class="card-image waves-effect waves-block waves-light">

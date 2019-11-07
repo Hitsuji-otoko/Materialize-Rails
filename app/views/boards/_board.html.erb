@@ -1,16 +1,18 @@
-<div class="show-image">
-    <% image_num = board.id %>
-    <% if board.id > 15 %>
-        <% image_num = 1 %>
-    <% end %>
-    <%= image_tag("image#{image_num}.jpg") %><br>
+<h4>投稿詳細</h4>
+<h6><%= link_to '編集', edit_board_path %></h6>
+<% image_num = board.id %>
+<% if board.id > 15 %>
+    <% image_num = 1 %>
+<% end %>
+<%# Material Box %>
+<%= image_tag("image#{image_num}.jpg" ,:class => "materialboxed") %>
+<div class="section white">
+    <h5 class="header">タイトル: <%= board.title %></h5>
+    <h6 class="header">作成者: <%= board.name %></h6>
+    <h6 class="grey-text text-darken-3 lighten-3"><%= board.body %></h6>
 </div>
-<div class="post-content">
-    <h5>タイトル: <%= board.title %></h5>
-    <h6>作成者: <%= board.name%></h6>
-    <h6>本文: <%= board.body %></h6>
-    <p>
-        <a><%= link_to '詳細', board_path(board.id), class: 'waves-effect waves-teal btn-flat' %></a>
-        <a><%= link_to '削除', board_path(board.id), class: 'waves-effect waves-teal btn-flat', method: :delete %></a>
-    </p>
-</div>
+<a href="/boards", class="waves-effect waves-light btn">掲示板一覧へ戻る</a>
+<button class="destroy-btn"><%= link_to '削除', board_path(board.id),  method: :delete %></button>
+
+
+

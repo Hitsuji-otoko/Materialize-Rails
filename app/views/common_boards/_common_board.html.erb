@@ -1,18 +1,18 @@
- 
-    <h4>投稿詳細</h4>
-    <% image_num = common_board.id %>
-    <% if common_board.id > 15 %>
-        <% image_num = 1 %>
-    <% end %>
-    <%# Material Box %>
-    <%= image_tag("image#{image_num}.jpg" ,:class => "materialboxed") %>
-    <div class="section white">
-        <h5 class="header">タイトル: <%= common_board.title %></h5>
-        <h6 class="header">作成者: <%= common_board.name %></h6>
-        <h6 class="grey-text text-darken-3 lighten-3"><%= common_board.body %></h6>
-    </div>
-    <a href="/common_boards", class="waves-effect waves-light btn">掲示板一覧へ戻る</a>    
-    <button class="btn white red-text waves-effect-waves-yellow"><%= link_to '削除', common_board_path(common_board.id),  method: :delete %></button>
-    
+<h4>投稿詳細</h4>
+<h6><%= link_to '編集', edit_common_board_path %></h6>
+<% image_num = common_board.id %>
+<% if common_board.id > 15 %>
+    <% image_num = 1 %>
+<% end %>
+<%# Material Box %>
+<%= image_tag("image#{image_num}.jpg" ,:class => "materialboxed") %>
+<div class="section white">
+    <h5 class="header">タイトル: <%= common_board.title %></h5>
+    <h6 class="header">作成者: <%= common_board.name %></h6>
+    <h6 class="grey-text text-darken-3 lighten-3"><%= common_board.body %></h6>
+</div>
+<a href="/common_boards", class="waves-effect waves-light btn">掲示板一覧へ戻る</a>
+<button class="destroy-btn"><%= link_to '削除', common_board_path(common_board.id),  method: :delete %></button>
+
 
 
