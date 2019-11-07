@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
-<%= javascript_include_tag 'navbar', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'common', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'selectbox', 'data-turbolinks-track': 'reload' %>
+
 </head>
 
 <body>
@@ -26,7 +28,8 @@
           <li><a href="/common_boards/new" class="waves-effect waves-light btn">新規投稿</a></li>
         <% end %>
         <!-- Dropdown Trigger -->
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">掲示板メニュー<i class="material-icons right">arrow_drop_down</i></a></li>        
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown-board">掲示板メニュー<i class="material-icons right">arrow_drop_down</i></a></li>        
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown-tag">タグ検索<i class="material-icons right">arrow_drop_down</i></a></li>        
       </ul>
       <!-- SideNav -->
       <a href="" class="sidenav-trigger" data-target="slide-out"><i class="material-icons">menu</i></a>
@@ -35,10 +38,16 @@
   </nav>
 
   <!-- Dropdown Structure -->
-  <ul id="dropdown1" class="dropdown-content">
+  <ul id="dropdown-board" class="dropdown-content">
     <li class="divider"></li>
     <li><a href="/common_boards">共通掲示板</a></li>
     <li><a href="/boards">ユーザ掲示板</a></li>
+  </ul>
+
+  <ul id="dropdown-tag" class="dropdown-content">
+    <li class="divider"></li>
+    <li><a href="#">tag1</a></li>
+    <li><a href="#">tag2</a></li>
   </ul>
 
   <!-- SideNavの要素(Structure) -->
