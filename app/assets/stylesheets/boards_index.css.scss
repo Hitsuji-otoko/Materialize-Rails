@@ -3,17 +3,25 @@
     flex-wrap: wrap;
   }
 .card {
-    width: 280px;
-    height: 400px;
     float: left;
     margin: 10px;
 }
-
 .card-image {
     width: 278px;
     height: 240px;
 }
-
 .material-icons {
     font-size: 14px;
+}
+.row-header {
+    margin: 20px;
+}
+.newpost-button {
+    float: right;
+}
+.login-submit-button {
+    margin: 10px;
+}
+.show-image {
+    margin-top: 20px;
 }

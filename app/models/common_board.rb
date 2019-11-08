@@ -1,0 +1,2 @@
+class CommonBoard < ApplicationRecord
+end

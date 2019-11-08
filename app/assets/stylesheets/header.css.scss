@@ -1,0 +1,31 @@
+dl.search2{
+	position:relative;
+}
+dl.search2 dt{
+	margin-right:105px;
+	padding:8px;
+	background-color:#fff;
+	border:1px solid #aaa;
+}
+dl.search2 dt input{
+	width:70%;
+	height:12px;
+	line-height:24px;
+	background:none;
+	border:none;
+}
+dl.search2 dd{
+	position:absolute;
+	top:0;
+	right:0;
+}
+dl.search2 dd button{
+	display:block;
+	width:100px;
+	height:42px;
+	color:#fff;
+	line-height:40px;
+	text-align:center;
+	background-color:#f66;
+	border:1px solid #c66;
+}

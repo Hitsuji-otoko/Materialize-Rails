@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Materialize-Rails</title>
+    <title>Materialize掲示板</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'navbar', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'common', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'selectbox', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= render 'header' %>
+    <div class="session-control-box">
+      <div class="container">
+          <% if notice %>
+            <div class="card-panel teal lighten-4"><div class="notice">        
+              <%= notice %>
+            </div></div>
+          <% end %>
+          <% if alert %>
+            <div class="card-panel red lighten-4"><div class="alert">
+              <span class="pink-text text-darken4"><%= alert %></span>
+            </div></div>
+          <% end %>
+        </div>
+    <div class="container">
       <%= yield %>
+    </div>
   </body>
 </html>

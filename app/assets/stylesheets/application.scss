@@ -3,5 +3,7 @@
 @import "materialize/components/color-variables";
 $primary-color: color("blue", "lighten-2") !default;
 @import 'materialize';
-@import 'home';
+@import 'boards';
+@import 'common_boards';
+@import 'header';
 @import 'spaces';

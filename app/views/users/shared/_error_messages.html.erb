@@ -1,0 +1,11 @@
+<% if resource.errors.any? %>
+  <div id="error_explanation">
+    <div class="card-panel red lighten-4">
+    <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <span class="red-text text-darken-2"><li><h6><%= message %></h6></li></span>
+      <% end %>
+    </ul>
+    </div>
+  </div>
+<% end %>

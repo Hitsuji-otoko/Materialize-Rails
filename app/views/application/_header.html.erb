@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <head>
-<%= javascript_include_tag 'navbar', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'common', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'selectbox', 'data-turbolinks-track': 'reload' %>
+
 </head>
 
 <body>
   <nav>
-  <div class="container">
     <div class="nav-wrapper">
     <div class="container">
-      <a href="" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+      <% if signed_in? %>
+        <a href="/boards" class="brand-logo"><i class="material-icons">audiotrack</i>Board</a>
+      <% else %>
+        <a href="/" class="brand-logo"><i class="material-icons">audiotrack</i>Board</a>
+      <% end %>
       <ul class="right hide-on-med-and-down">
-        <li><a href="" class="waves-effect waves-light btn">Sass</a></li>
-        <li><a href="" class="waves-effect waves-light btn">Components</a></li>
+        <% if signed_in? %>
+          <li>ユーザ名: <%= current_user.username %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete , class: '<a class="waves-effect waves-teal btn-flat">' %></li>
+        <% else %>
+          <li><a href="/users/login" class="waves-effect waves-light btn">ログイン</a></li>
+        <% end %>
+          <li><a href="/users/sign_up" class="waves-effect waves-light btn">ユーザ登録</a></li>
+        <% if signed_in? %>  
+          <li><a href="/boards/new" class="waves-effect waves-light btn">新規投稿</a></li>
+        <% else %>
+          <li><a href="/common_boards/new" class="waves-effect waves-light btn">新規投稿</a></li>
+        <% end %>
         <!-- Dropdown Trigger -->
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown-board">掲示板メニュー<i class="material-icons right">arrow_drop_down</i></a></li>        
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown-tag">タグ検索<i class="material-icons right">arrow_drop_down</i></a></li>        
       </ul>
       <!-- SideNav -->
       <a href="" class="sidenav-trigger" data-target="slide-out"><i class="material-icons">menu</i></a>
     </div>
     </div>
-  </div>
   </nav>
 
   <!-- Dropdown Structure -->
-  <ul id="dropdown1" class="dropdown-content">
-    <li><a href="">one</a></li>
-    <li><a href="">two</a></li>
+  <ul id="dropdown-board" class="dropdown-content">
     <li class="divider"></li>
-    <li><a href="">three</a></li>
+    <li><a href="/common_boards">共通掲示板</a></li>
+    <li><a href="/boards">ユーザ掲示板</a></li>
+  </ul>
+
+  <ul id="dropdown-tag" class="dropdown-content">
+    <li class="divider"></li>
+    <li><a href="#">tag1</a></li>
+    <li><a href="#">tag2</a></li>
   </ul>
 
   <!-- SideNavの要素(Structure) -->
   <ul id="slide-out" class="sidenav">
-      <li><a href="#!">Sass<i class="material-icons left">person</i></a></li>
-      <li><a href="#!">Components<i class="material-icons left">local_post_office</i></a></li>
+      <li><a href="/users/login">ログイン<i class="material-icons left">person</i></a></li>
+      <li><a href="/users/sign_up">ユーザ登録<i class="material-icons left">local_post_office</i></a></li>
+      <li><a href="">新規投稿<i class="material-icons left">local_post_office</i></a></li>
       <%# 
       <li class="no-padding">
               <ul class="collapsible collapsible-accordion">
