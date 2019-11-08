@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# カードデザイン型掲示板App
 
-Things you may want to cover:
+## 機能
 
-* Ruby version
+- 掲示板の基本機能　(閲覧,新規投稿,編集,削除)
+- ユーザ登録, ログイン機能
+- 掲示板は2種類あります
+    - 共通掲示板: 未ログインユーザ, ログインユーザ共に使用可能
+    - ユーザ掲示板: ログインしたユーザしか見れない掲示板。未ログインユーザからはアクセスできない
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##  推しポイント
+柴犬のフリー画像
+画像選択時のアクション(JQueryで実装)
