@@ -52,6 +52,10 @@ class CommonBoardsController < ApplicationController
         redirect_to ("/common_boards"), flash: { notice: "「#{@common_board.title}」の掲示板を削除しました。" }
     end
 
+    def search
+        @common_boards = CommonBoard.search(params[:search])
+    end
+
     private
 
     def common_board_params

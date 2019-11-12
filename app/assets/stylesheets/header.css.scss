@@ -1,25 +1,25 @@
-dl.search2{
+dl.search{
 	position:relative;
 }
-dl.search2 dt{
+dl.search dt{
 	margin-right:105px;
 	padding:8px;
 	background-color:#fff;
 	border:1px solid #aaa;
 }
-dl.search2 dt input{
+dl.search dt input{
 	width:70%;
 	height:12px;
 	line-height:24px;
 	background:none;
 	border:none;
 }
-dl.search2 dd{
+dl.search dd{
 	position:absolute;
 	top:0;
 	right:0;
 }
-dl.search2 dd button{
+dl.search dd button{
 	display:block;
 	width:100px;
 	height:42px;
