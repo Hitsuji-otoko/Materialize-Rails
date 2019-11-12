@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="row-header">
+    <h4>共通掲示板</h4>
+  </div>
+</div>
+
+<!-- 検索フォーム -->
+<form action="/common_boards/search" name="search" method="get">
+	<dl class="search">
+		<dt><input type="text" name="search" value="" placeholder="Search" /></dt>
+		<dd><button>Search</button></dd>
+	</dl>
+</form>
+
+<!-- <p>検索</p>
+<%= form_tag(common_boards_search_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %> -->
+
+<% @common_boards.each do |common_board| %>
+    <div class="card medium">
+      <div class="card-image waves-effect waves-block waves-light">
+        <% image_num = common_board.id %>
+        <% if common_board.id > 15 %>
+          <% image_num = 1 %>
+        <% end %>
+        <%= image_tag("image#{image_num}.jpg", :class => "activator") %>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%= common_board.title %><i class="material-icons right">arrow_downward</i></span>
+        <p>
+        <a><%= link_to '詳細', common_board_path(common_board.id), class: 'waves-effect waves-teal btn-flat' %></a>
+        <a><%= link_to '削除', common_board_path(common_board.id), class: 'waves-effect waves-teal btn-flat', method: :delete %></a>
+        </p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><%= common_board.title  %><i class="material-icons right">close</i></span>
+        <p><%= common_board.body %></p>
+      </div>
+  </div>
+<% end %>
