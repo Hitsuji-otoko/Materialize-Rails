@@ -2,3 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'boards_index';
+
+#sub-button {
+    display: inline;
+}
+
+.like-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
