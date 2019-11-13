@@ -10,6 +10,16 @@
     <h5 class="header">タイトル: <%= board.title %></h5>
     <h6 class="header">作成者: <%= board.name %></h6>
     <h6 class="grey-text text-darken-3 lighten-3"><%= board.body %></h6>
+    <h6>いいね件数: <%= @board.likes.count %></h6>
+    <% if current_user.already_liked?(@board) %>
+        <%= button_to 'いいねを取り消す', board_like_path(@board), method: :delete %>
+    <% else %>
+        <%= button_to 'いいね', board_likes_path(@board) %>
+    <% end %>
+    <h6>いいねしたユーザー</h6>
+    <% @board.liked_users.each do |user| %>
+        <li><%= user.username %></li>
+    <% end %>
 </div>
 <a href="/boards", class="waves-effect waves-light btn">掲示板一覧へ戻る</a>
 <button class="destroy-btn"><%= link_to '削除', board_path(board.id),  method: :delete %></button>

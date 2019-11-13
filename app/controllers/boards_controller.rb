@@ -10,6 +10,10 @@ class BoardsController < ApplicationController
     @board = current_user.boards.build
   end
 
+  def show
+    @like = Like.new
+  end
+
   def edit
   end
 

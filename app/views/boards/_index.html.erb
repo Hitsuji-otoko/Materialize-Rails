@@ -33,6 +33,8 @@
         <a><%= link_to '詳細', board_path(board.id), class: 'waves-effect waves-teal btn-flat' %></a>
         <a><%= link_to '削除', board_path(board.id), class: 'waves-effect waves-teal btn-flat', method: :delete %></a>
         </p>
+        <p><br><a class="disabled">いいね件数:  </a><%= board.likes.count %></p>
+        </p>
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4"><%= board.title  %><i class="material-icons right">close</i></span>
