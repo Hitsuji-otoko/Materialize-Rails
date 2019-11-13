@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :boards, dependent: :destroy
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :liked_boards, through: :likes, source: :board
 
   # Include default devise modules. Others available are:
