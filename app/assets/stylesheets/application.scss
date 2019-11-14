@@ -3,6 +3,7 @@
 @import "materialize/components/color-variables";
 $primary-color: color("blue", "lighten-2") !default;
 @import 'materialize';
+@import 'toastr';
 @import 'boards';
 @import 'common_boards';
 @import 'header';

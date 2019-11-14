@@ -13,21 +13,36 @@
 
   <body>
     <%= render 'header' %>
-    <div class="session-control-box">
+    <!-- <div class="session-control-box">
       <div class="container">
           <% if notice %>
-            <div class="card-panel teal lighten-4"><div class="notice">        
-              <%= notice %>
-            </div></div>
+            <div class="card-panel teal lighten-4">
+              <div class="notice">        
+                <%= notice %>
+              </div>
+            </div>
           <% end %>
           <% if alert %>
-            <div class="card-panel red lighten-4"><div class="alert">
-              <span class="pink-text text-darken4"><%= alert %></span>
-            </div></div>
+            <div class="card-panel red lighten-4">
+              <div class="alert">
+                <span class="pink-text text-darken4"><%= alert %></span>
+              </div>
+            </div>
           <% end %>
-        </div>
+      </div>
+    </div> -->
     <div class="container">
       <%= yield %>
     </div>
+ 
+    <% if flash.any? %>
+      <script type="text/javascript">
+      <% flash.each do |key, value| %>
+ 　　　 <% type = key.to_s.gsub('alert','error').gsub('notice','info') %>
+　　　　　toastr['<%=type %>']('<%=value %>');
+      <% end %>
+      </script>
+    <% end %>
+    
   </body>
 </html>

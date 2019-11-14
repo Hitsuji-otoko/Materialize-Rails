@@ -68,3 +68,5 @@ gem 'material_icons'
 
 gem 'devise'
 gem 'devise-i18n'
+
+gem 'toastr-rails'
