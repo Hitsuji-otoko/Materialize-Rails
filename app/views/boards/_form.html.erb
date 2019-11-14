@@ -11,6 +11,11 @@
     <%= f.label :body, '本文' %>
     <%= f.text_area :body, class: 'form-control', rows: 10 %>
   </div>
-
-  <%= f.submit '保存', class: 'btn btn-primary' %>
+  <div class="form-group">
+    <%= f.label "画像をアップロード" %><br><%= f.file_field :image %>
+  </div>
+  
+  <div class="button-board-newpost">
+    <%= f.submit '保存', class: 'btn btn-primary' %>
+  </div>
 <% end %>

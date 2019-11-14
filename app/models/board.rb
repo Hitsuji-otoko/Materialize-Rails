@@ -3,6 +3,8 @@ class Board < ApplicationRecord
     has_many :likes, -> {order(:created_at => :desc)}, dependent: :destroy
     has_many :liked_users, through: :likes, source: :user, dependent: :destroy
     
+    mount_uploader :image, ImageUploader
+
     def self.search(search)
         return Board.all unless search
         Board.where(['title LIKE ?', "%#{search}%"])

@@ -22,7 +22,14 @@
     <% @board.liked_users.each do |user| %>
         <li><%= user.username %></li>
     <% end %>
+    <h6>投稿した画像</h6>
+        <div class="board-image">
+            <% if board.image? %>
+                <%= image_tag board.image.url %>
+            <% end %>
+        </div>
 </div>
+
 <a href="/boards", class="waves-effect waves-light btn">掲示板一覧へ戻る</a>
 <button class="destroy-btn"><%= link_to '削除', board_path(board.id),  method: :delete %></button>
 
