@@ -65,6 +65,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
+gem 'simple_form'
 gem 'toastr-rails'
 gem 'carrierwave'
 gem 'ransack'
