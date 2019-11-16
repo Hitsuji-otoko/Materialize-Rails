@@ -1,1 +1,13 @@
+<!-- form_forのRansack版 -->
+<dl class="search">
+<%= search_form_for @search do |f| %>
+    <%# titleカラムに対して部分一致検索ができる %>
+    <%= f.label :title_cont, "タイトルを含む" %>
+    <%= f.search_field :title_cont %>
+
+    <%# 検索ボタン %>
+    <div class="actions"><%= f.submit "検索" %></div>
+<% end %>
+</dl>
+
 <%= render partial: 'index', object: @boards %>

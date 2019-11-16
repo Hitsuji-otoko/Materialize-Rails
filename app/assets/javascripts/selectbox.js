@@ -1,1 +1,3 @@
-$('select').material_select();
+$(document).ready(function(){
+    $('select').formSelect();
+  });

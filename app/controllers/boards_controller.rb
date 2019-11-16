@@ -53,6 +53,11 @@ class BoardsController < ApplicationController
 
   def search
     @boards = current_user.boards.search(params[:search])
+
+    # 検索オブジェクト
+    @search = current_user.boards.ransack(params[:q])
+    # 検索結果
+    @search_result = @search.result
   end
 
   private

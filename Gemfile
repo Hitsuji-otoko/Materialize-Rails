@@ -67,6 +67,7 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
 gem 'toastr-rails'
 gem 'carrierwave'
+gem 'ransack'
 
 gem 'devise'
 gem 'devise-i18n'
