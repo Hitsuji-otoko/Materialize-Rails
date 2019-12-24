@@ -11,4 +11,8 @@ class User < ApplicationRecord
   def already_liked?(board)
     self.likes.exists?(board_id: board.id)
   end
+
+  def remember_me
+    true
+  end
 end

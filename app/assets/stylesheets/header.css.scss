@@ -2,8 +2,8 @@ dl.search{
 	position:relative;
 }
 dl.search dt{
-	margin-right:105px;
-	padding:8px;
+	margin-right:130px;
+	padding:10px;
 	background-color:#fff;
 	border:1px solid #aaa;
 }
@@ -20,8 +20,9 @@ dl.search dd{
 	right:0;
 }
 dl.search dd button{
+	margin-left: 50px;
 	display:block;
-	width:100px;
+	width:auto;
 	height:42px;
 	color:#fff;
 	line-height:40px;

@@ -11,21 +11,7 @@
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box(:remember_me, {}, true, false) %>
-      <%= f.label :remember_me  %>
-    </div>
-  <% end %>
-
-    <p>
-      <label>
-        <input id="indeterminate-checkbox" type="checkbox" />
-        <span>Indeterminate Style</span>
-      </label>
-    </p>
-
-    
+  
 
 
   <div class="actions">
@@ -39,18 +25,4 @@
   <%= link_to "パスワードを忘れちゃった?", new_user_password_path(resource_name) %><br />
 <% end %>
 
-<!-- MULTIPLE SELECT -->
-<div class="input-field">
-  <select multiple>
-    <option value="" disabled selected>Selecting Option</option>
-    <option value="1">Option1</option>
-    <option value="2">Option2</option>
-  </select>
-  <label>Select List</label>
-</div>
 
-<%# RADIO BUTTON %>
-<p>
-  <input type="radio" name="gender" id="male" checked>
-  <label for="male">Male</label>
-</p>
